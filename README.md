@@ -68,8 +68,18 @@ streamlit run app.py
 浏览器打开 `http://localhost:8501`，上传视频 → 设置参数 → 一键分析 → 预览 + 下载集锦。
 
 <p align="center">
-  <img src="assets/web-ui.png" width="90%" alt="Streamlit Web UI">
+  <img src="assets/web-ui.png" width="90%" alt="网页端 Web UI">
 </p>
+
+<p align="center">
+  <b>手机端</b>
+</p>
+<table>
+<tr>
+  <td><img src="assets/phone-streamlit-1.png.jpg" width="100%"></td>
+  <td><img src="assets/phone-streamlit-2.png.jpg" width="100%"></td>
+</tr>
+</table>
 
 在线部署：[share.streamlit.io](https://share.streamlit.io)，关联 GitHub 仓库即可。已部署：**[basketball-highlights.streamlit.app](https://basketball-highlights.streamlit.app)**
 
@@ -210,7 +220,9 @@ basketball-highlight/
 │   ├── build_up.jpg
 │   ├── shot_action.jpg
 │   ├── after_score.jpg
-│   └── web-ui.png             #   Web UI 截图
+│   ├── web-ui.png             #   网页端截图
+│   ├── phone-streamlit-1.png.jpg  #   手机端截图
+│   └── phone-streamlit-2.png.jpg  #   手机端截图
 ├── highlight.py              # 主 pipeline (Phase A+B+C)
 ├── player_tracker.py         # CV 球员跟踪模块 (Phase C)
 ├── test_mimo_video.py        # Mimo 视频能力验证脚本
