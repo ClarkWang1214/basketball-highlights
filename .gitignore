@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+
+# 大文件 - 不上传
+video.mp4
+video_goals.json
+video_clips/
+video_refine_clips/
+highlights.mp4
+detected_goals.json
+
+# 临时文件
+*.tmp
+clips.txt
+
+# YOLO 模型权重 (自动下载)
+yolov8n.pt
+
+# 环境
+.env
+venv/
+.venv/
