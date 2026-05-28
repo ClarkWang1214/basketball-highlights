@@ -60,10 +60,6 @@ python highlight.py game.mp4 -o highlights.mp4 --track
 
 ### Web UI
 
-<p align="center">
-  <img src="assets/web-ui.png" width="90%" alt="Streamlit Web UI">
-</p>
-
 ```bash
 pip install streamlit
 streamlit run app.py
@@ -71,7 +67,11 @@ streamlit run app.py
 
 浏览器打开 `http://localhost:8501`，上传视频 → 设置参数 → 一键分析 → 预览 + 下载集锦。
 
-在线部署：[share.streamlit.io](https://share.streamlit.io)，关联 GitHub 仓库，自动部署生成公网链接。手机浏览器也能用。
+<p align="center">
+  <img src="assets/web-ui.png" width="90%" alt="Streamlit Web UI">
+</p>
+
+在线部署：[share.streamlit.io](https://share.streamlit.io)，关联 GitHub 仓库即可。已部署：**[basketball-highlights.streamlit.app](https://basketball-highlights.streamlit.app)**
 
 ## 整体架构
 
