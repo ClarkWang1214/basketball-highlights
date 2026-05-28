@@ -60,6 +60,10 @@ python highlight.py game.mp4 -o highlights.mp4 --track
 
 ### Web UI
 
+<p align="center">
+  <img src="assets/web-ui.png" width="90%" alt="Streamlit Web UI">
+</p>
+
 ```bash
 pip install streamlit
 streamlit run app.py
@@ -205,7 +209,8 @@ basketball-highlight/
 │   ├── storyboard.jpg        #   2x2 帧序列：进攻→出手→球近框
 │   ├── build_up.jpg
 │   ├── shot_action.jpg
-│   └── after_score.jpg
+│   ├── after_score.jpg
+│   └── web-ui.png             #   Web UI 截图
 ├── highlight.py              # 主 pipeline (Phase A+B+C)
 ├── player_tracker.py         # CV 球员跟踪模块 (Phase C)
 ├── test_mimo_video.py        # Mimo 视频能力验证脚本
