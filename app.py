@@ -77,16 +77,25 @@ if video_file:
 
                     data = detect_goals(video_path, api_key, fps=fps)
                     goals = data.get("goals", [])
-                    # 过滤越界进球
+                    # 过滤越界进球 (ffprobe, fallback: OpenCV)
                     import subprocess
-                    dur = subprocess.run(
-                        ["ffprobe", "-v", "error", "-show_entries",
-                         "format=duration", "-of",
-                         "default=noprint_wrappers=1:nokey=1",
-                         str(video_path)],
-                        capture_output=True, text=True,
-                    )
-                    vdur = float(dur.stdout.strip()) if dur.stdout.strip() else 0
+                    vdur = 0
+                    try:
+                        dur = subprocess.run(
+                            ["ffprobe", "-v", "error", "-show_entries",
+                             "format=duration", "-of",
+                             "default=noprint_wrappers=1:nokey=1",
+                             str(video_path)],
+                            capture_output=True, text=True, timeout=10,
+                        )
+                        vdur = float(dur.stdout.strip()) if dur.stdout.strip() else 0
+                    except Exception:
+                        import cv2
+                        cap = cv2.VideoCapture(str(video_path))
+                        fps = cap.get(cv2.CAP_PROP_FPS) or 30
+                        frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
+                        vdur = frames / fps if fps > 0 else 0
+                        cap.release()
                     valid = [g for g in goals if g["time_sec"] <= vdur]
                     st.write(f"检测到 {len(goals)} 个进球（有效 {len(valid)} 个）")
                     goals = valid
