@@ -71,6 +71,8 @@ streamlit run app.py
   <img src="assets/web-ui.png" width="90%" alt="网页端 Web UI">
 </p>
 
+在线部署：[share.streamlit.io](https://share.streamlit.io)，关联 GitHub 仓库即可。已部署：**[basketball-highlights.streamlit.app](https://basketball-highlights.streamlit.app)**
+
 <p align="center">
   <b>手机端</b>
 </p>
@@ -80,8 +82,6 @@ streamlit run app.py
   <td><img src="assets/phone-streamlit-2.png.jpg" width="100%"></td>
 </tr>
 </table>
-
-在线部署：[share.streamlit.io](https://share.streamlit.io)，关联 GitHub 仓库即可。已部署：**[basketball-highlights.streamlit.app](https://basketball-highlights.streamlit.app)**
 
 ## 整体架构
 
