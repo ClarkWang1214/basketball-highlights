@@ -1,0 +1,6 @@
+openai
+ultralytics
+supervision
+opencv-python
+streamlit
+numpy

@@ -56,7 +56,18 @@ python highlight.py game.mp4 -o highlights.mp4
 python highlight.py game.mp4 -o highlights.mp4 --track
 ```
 
-首次运行时 YOLOv8n 模型权重 (6.2MB) 会自动下载。测试视频 (`video.mp4`) 和生成的集锦不包含在仓库中——放你自己的比赛视频即可。
+首次运行时 YOLOv8n 模型权重 (6.2MB) 会自动下载。
+
+### Web UI
+
+```bash
+pip install streamlit
+streamlit run app.py
+```
+
+浏览器打开 `http://localhost:8501`，上传视频 → 设置参数 → 一键分析 → 预览 + 下载集锦。
+
+在线部署：[share.streamlit.io](https://share.streamlit.io)，关联 GitHub 仓库，自动部署生成公网链接。手机浏览器也能用。
 
 ## 整体架构
 
@@ -197,7 +208,9 @@ basketball-highlight/
 │   └── after_score.jpg
 ├── highlight.py              # 主 pipeline (Phase A+B+C)
 ├── player_tracker.py         # CV 球员跟踪模块 (Phase C)
-└── test_mimo_video.py        # Mimo 视频能力验证脚本
+├── test_mimo_video.py        # Mimo 视频能力验证脚本
+├── app.py                    # Streamlit Web UI
+└── requirements.txt          # Python 依赖
 ```
 
 ## 参考
